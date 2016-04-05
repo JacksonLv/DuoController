@@ -16,7 +16,7 @@ SYSTEM_MODE(AUTOMATIC);//connect to cloud
 #endif
 
 // Modified the following for your AP/Router.
-#define AP "RedBear"
+#define AP "AP-02_2.4G"
 #define PIN "0098019777"
 
 /******************************************************
