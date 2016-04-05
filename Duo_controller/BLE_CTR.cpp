@@ -413,6 +413,20 @@ int gattWriteCallback(uint16_t value_handle, uint8_t *buf, uint16_t size)
                 Serial.println();
                 break;
             }
+            case 'R':
+            {
+              Serial.println("Reset Pin");
+              for(uint8_t i=0;i<TOTAL_PINS_NUM;i++)
+              {
+                pinMode(duo_pin[i], INPUT_PULLDOWN);            
+                pins_state[i] = LOW;
+                pins_mode[i] = DEFAULT_MODE;
+                
+              }
+              byte buf_tx[] = {'R'};
+              memcpy(characteristic2_data, buf_tx, 1);
+              ble.sendNotify(character2_handle, characteristic2_data, 1); 
+            }
         }
     }
     ble_status_check_flag = 1;
