@@ -16,8 +16,8 @@ SYSTEM_MODE(AUTOMATIC);//connect to cloud
 #endif
 
 // Modified the following for your AP/Router.
-#define AP "AP-02_2.4G"
-#define PIN "0098019777"
+//#define AP "AP-02_2.4G"
+//#define PIN "0098019777"
 
 /******************************************************
  *               Variable Definitions
@@ -209,7 +209,7 @@ void setup() {
     Serial.println("Note: If your Duo hasn't stored a valid WiFi profile, it will enter the listening mode for provisioning first.\n");
    
     WiFi.on();
-    WiFi.setCredentials(AP, PIN, WPA2);
+    //WiFi.setCredentials(AP, PIN, WPA2);
     WiFi.connect();
     
     IPAddress localIP = WiFi.localIP();
